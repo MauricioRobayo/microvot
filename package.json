@@ -1,0 +1,28 @@
+{
+  "name": "mvbot",
+  "version": "1.0.0",
+  "description": "Twitter bot to retweet everything Microverse related",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauricioRobayo/mvbot.git"
+  },
+  "keywords": [
+    "Twitter",
+    "Bot",
+    "Microverse"
+  ],
+  "author": {
+    "name": "Mauricio Robayo",
+    "email": "hi@mauriciorobayo.com",
+    "url": "https://www.mauriciorobayo.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MauricioRobayo/mvbot/issues"
+  },
+  "homepage": "https://github.com/MauricioRobayo/mvbot#readme"
+}
