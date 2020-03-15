@@ -4,7 +4,8 @@
   "description": "Twitter bot to retweet everything Microverse related",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "search": "run.env node src/search.js"
   },
   "repository": {
     "type": "git",
@@ -55,5 +56,9 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "dependencies": {
+    "run.env": "^1.1.0",
+    "twitterize": "^2.0.5"
   }
 }
