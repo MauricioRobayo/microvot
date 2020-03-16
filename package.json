@@ -36,7 +36,8 @@
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "run.env": "^1.1.0"
   },
   "prettier": {
     "semi": false,
@@ -60,7 +61,6 @@
   },
   "dependencies": {
     "gist-client": "^1.1.1",
-    "run.env": "^1.1.0",
     "twitterize": "^2.1.0"
   }
 }
