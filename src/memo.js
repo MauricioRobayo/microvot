@@ -7,12 +7,12 @@ class Memo {
     this.gistId = '443448bbbddd72ba3bc10187edb9b9c6'
   }
 
-  async getLastExecution() {
-    const json = await this.gistClient.getOneById(this.gistId)
-    return JSON.parse(json.files['microvot.json'].content)
+  async getLastExecInfo() {
+    const gist = await this.gistClient.getOneById(this.gistId)
+    return JSON.parse(gist.files['microvot.json'].content)
   }
 
-  setLastExecution({ maxId }) {
+  setLastExecInfo({ maxId }) {
     this.gistClient.update(this.gistId, {
       files: {
         'microvot.json': {
