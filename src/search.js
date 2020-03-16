@@ -3,7 +3,7 @@ const Memo = require('./memo')
 
 const search = async () => {
   const memo = new Memo()
-  const { max_id: maxId } = await memo.getLastExecInfo()
+  const { max_id: maxId = 0 } = await memo.getLastExecInfo()
   const t = twitterize({
     api_key: process.env.TWITTER_API_KEY,
     api_secret_key: process.env.TWITTER_API_SECRET_KEY,
