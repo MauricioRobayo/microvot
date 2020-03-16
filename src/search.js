@@ -10,9 +10,11 @@ const t = twitterize({
 const options = {
   requestMethod: 'GET',
   endpoint: '/search/tweets.json',
-  queryParams: { q: '#microverse -filter:retweets' },
+  queryParams: { q: '@microverseinc -filter:retweets' },
 }
 
 t(options)
-  .then(console.log)
+  .then(response => {
+    console.log(JSON.parse(response))
+  })
   .catch(console.log)
