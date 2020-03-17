@@ -1,5 +1,5 @@
 {
-  "name": "mvbot",
+  "name": "microvot",
   "version": "1.0.0",
   "description": "Twitter bot to retweet everything Microverse related",
   "private": true,
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MauricioRobayo/mvbot.git"
+    "url": "git+https://github.com/MauricioRobayo/microvot.git"
   },
   "keywords": [
     "Twitter",
@@ -23,9 +23,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MauricioRobayo/mvbot/issues"
+    "url": "https://github.com/MauricioRobayo/microvot/issues"
   },
-  "homepage": "https://github.com/MauricioRobayo/mvbot#readme",
+  "homepage": "https://github.com/MauricioRobayo/microvot#readme",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
