@@ -2,10 +2,10 @@
   "name": "mvbot",
   "version": "1.0.0",
   "description": "Twitter bot to retweet everything Microverse related",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "search": "run.env node src/search.js"
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
