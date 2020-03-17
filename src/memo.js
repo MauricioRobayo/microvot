@@ -14,11 +14,15 @@ class Memo {
     return file.size > 0 ? JSON.parse(file.content) : {}
   }
 
-  setLastExecInfo({ maxId }) {
+  setLastExecInfo({ maxId, ...metadata }) {
     this.gistClient.update(this.gistId, {
       files: {
         [this.gistFile]: {
-          content: JSON.stringify({ max_id: maxId, datetime: new Date() }),
+          content: JSON.stringify({
+            max_id_str: maxId,
+            datetime: new Date(),
+            ...metadata,
+          }),
         },
       },
     })
