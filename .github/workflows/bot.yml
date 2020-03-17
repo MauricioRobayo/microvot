@@ -20,4 +20,10 @@ jobs:
         run: npm ci
 
       - name: Run bot
+        env:
+          GIST_TOKEN: ${{ secrents.GIST_TOKEN }}
+          TWITTER_API_KEY: ${{ secrents.TWITTER_API_KEY }}
+          TWITTER_API_SECRET_KEY: ${{ secrents.TWITTER_API_SECRET_KEY }}
+          TWITTER_ACCESS_TOKEN: ${{ secrents.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrents.TWITTER_ACCESS_TOKEN_SECRET }} 
         run: npm start
