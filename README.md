@@ -17,7 +17,7 @@
   </p>
 </p>
 
-![tweeting](https://github.com/MauricioRobayo/microvot/workflows/bot/badge.svg)
+![retweets](https://github.com/MauricioRobayo/microvot/workflows/retweet/badge.svg)
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@
 
 [Microvot](https://twitter.com/microvot) is a simple bot that periodically search Twiter for tweets mentioning [@microverseinc](https://twitter.com/microverseinc), and retweets them in a batch.
 
-It uses [GitHub Actions](https://github.com/actions) on a scheduled interval. You can take a look at the action [here](.github/workflows/bot.yml).
+It uses [GitHub Actions](https://github.com/actions) on a scheduled interval. You can take a look at the action [here](.github/workflows/retweet.yml).
 
 The Twitter API allows to search using the `since_id` parameter, so we stored the `max_id` of the last search we have seen on a [gist](https://gist.github.com/MauricioRobayo/443448bbbddd72ba3bc10187edb9b9c6), and on the next search we use that `max_id` as the next `since_id`. That way we get only the new tweets made after each search.
 
