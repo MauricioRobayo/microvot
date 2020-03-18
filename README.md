@@ -17,6 +17,19 @@
   </p>
 </p>
 
+  <h3 align="center"><a href="https://twitter.com/microvot">MICROVOT</a></h3>
+
+  <p align="center">
+    Retweets everything <a href="https://twitter.com/microverseinc">@microverseinc</a> related!
+    <br/>
+    <a href="https://twitter.com/intent/follow?screen_name=microvot">Follow</a>
+    ·
+    <a href="https://github.com/MauricioRobayo/microvot/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/MauricioRobayo/microvot/issues">Request Feature</a>
+  </p>
+</p>
+
 ![retweets](https://github.com/MauricioRobayo/microvot/workflows/retweet/badge.svg)
 
 ## Table of Contents
