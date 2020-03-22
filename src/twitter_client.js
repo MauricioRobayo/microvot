@@ -51,22 +51,24 @@ class TwitterClient {
     return statuses
   }
 
+  async processBatch(statuses, fn) {
+    const processed = await Promise.all(statuses.map(fn))
+    this.valids = processed.filter(({ errors }) => !errors)
+    return this.valids
+  }
+
   async retweetBatch(statuses) {
-    const retweets = await Promise.all(statuses.map(this.retweet))
-    this.validRetweets = retweets.filter(({ errors }) => !errors)
-    return this.validRetweets
+    return this.processBatch(statuses, this.retweet)
   }
 
   async likeBatch(statuses) {
-    const likes = await Promise.all(statuses.map(this.like))
-    this.validLikes = likes.filter(({ errors }) => !errors)
-    return this.validLikes
+    return this.processBatch(statuses, this.like)
   }
 
   async updateMemo() {
     this.memo.setLastExecInfo({
       max_id_str: this.maxId,
-      retweets: this.validRetweets.length,
+      retweets: this.valids.length,
       likes: this.validLikes.length,
     })
   }
