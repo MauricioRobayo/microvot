@@ -15,6 +15,17 @@ class TwitterClient {
     return this.client(options)
   }
 
+  async like({ id_str: id }) {
+    const options = {
+      requestMethod: 'POST',
+      endpoint: `/favorites/create.json`,
+      queryParams: {
+        id,
+      },
+    }
+    return this.client(options)
+  }
+
   async searchRecent(query) {
     const { max_id_str: sinceId = 0 } = await this.memo.getLastExecInfo()
     this.sinceId = sinceId
