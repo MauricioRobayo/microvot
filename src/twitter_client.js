@@ -4,6 +4,8 @@ class TwitterClient {
   constructor(authOptions, memo) {
     this.client = twitterize(authOptions)
     this.memo = memo
+    this.like = this.like.bind(this)
+    this.retweet = this.retweet.bind(this)
   }
 
   async search(queryParams) {
@@ -26,6 +28,14 @@ class TwitterClient {
     return this.client(options)
   }
 
+  async retweet({ id_str: id }) {
+    const options = {
+      requestMethod: 'POST',
+      endpoint: `/statuses/retweet/${id}.json`,
+    }
+    return this.client(options)
+  }
+
   async searchRecent(query) {
     const { max_id_str: sinceId = 0 } = await this.memo.getLastExecInfo()
     this.sinceId = sinceId
@@ -41,26 +51,23 @@ class TwitterClient {
     return statuses
   }
 
-  async retweet({ id_str: id }) {
-    const options = {
-      requestMethod: 'POST',
-      endpoint: `/statuses/retweet/${id}.json`,
-    }
-    return this.client(options)
-  }
-
   async retweetBatch(statuses) {
-    const retweets = await Promise.all(
-      statuses.map(status => this.retweet(status)),
-    )
+    const retweets = await Promise.all(statuses.map(this.retweet))
     this.validRetweets = retweets.filter(({ errors }) => !errors)
     return this.validRetweets
+  }
+
+  async likeBatch(statuses) {
+    const likes = await Promise.all(statuses.map(this.like))
+    this.validLikes = likes.filter(({ errors }) => !errors)
+    return this.validLikes
   }
 
   async updateMemo() {
     this.memo.setLastExecInfo({
       max_id_str: this.maxId,
       retweets: this.validRetweets.length,
+      likes: this.validLikes.length,
     })
   }
 }

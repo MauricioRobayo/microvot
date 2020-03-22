@@ -12,10 +12,14 @@ const twitterClient = new TwitterClient(
 )
 
 const init = async () => {
-  const statuses = await twitterClient.searchRecent(
-    '@microverseinc -filter:retweets',
-  )
-  await twitterClient.retweetBatch(statuses)
+  const [mentions, hashtags] = await Promise.all([
+    twitterClient.searchRecent('@microverseinc -filter:retweets'),
+    twitterClient.searchRecent('#microverse'),
+  ])
+  await Promise.all([
+    twitterClient.retweetBatch(mentions),
+    twitterClient.likeBatch(hashtags),
+  ])
   twitterClient.updateMemo()
 }
 
