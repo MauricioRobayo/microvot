@@ -5,7 +5,7 @@ on:
     - cron: '0 */4 * * *'
 
 jobs:
-  build:
+  retweet:
     runs-on: ubuntu-latest
 
     steps:
