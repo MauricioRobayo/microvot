@@ -17,7 +17,7 @@
   </p>
 </p>
   
-![retweets](https://github.com/MauricioRobayo/microvot/workflows/retweet/badge.svg)
+[![retweets](https://github.com/MauricioRobayo/microvot/workflows/retweet/badge.svg)](https://github.com/MauricioRobayo/microvot/actions?query=workflow%3Aretweet)
 [![codebeat badge](https://codebeat.co/badges/17931215-23f0-47ac-85c9-31383657806e)](https://codebeat.co/projects/github-com-mauriciorobayo-microvot-master)
 
 ## Table of Contents
