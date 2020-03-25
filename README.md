@@ -7,7 +7,7 @@
   <h3 align="center"><a href="https://twitter.com/microvot">MICROVOT</a></h3>
 
   <p align="center">
-    Retweets everything <a href="https://twitter.com/microverseinc">@microverseinc</a> related!
+    Spreading the word about <a href="https://twitter.com/microverseinc">@microverseinc</a>!
     <br/>
     <a href="https://twitter.com/intent/follow?screen_name=microvot">Follow</a>
     ·
