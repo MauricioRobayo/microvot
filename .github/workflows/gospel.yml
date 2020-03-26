@@ -1,11 +1,11 @@
-name: retweet
+name: gospel
 
 on:
   schedule:
     - cron: '0 */4 * * *'
 
 jobs:
-  retweet:
+  gospel:
     runs-on: ubuntu-latest
 
     steps:
