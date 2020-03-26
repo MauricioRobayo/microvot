@@ -8,6 +8,11 @@ class TwitterClient {
     this.retweet = this.retweet.bind(this)
   }
 
+  static async processBatch(statuses, fn) {
+    const processed = await Promise.all(statuses.map(fn))
+    return processed.filter(({ errors }) => !errors)
+  }
+
   async search(queryParams) {
     const options = {
       requestMethod: 'GET',
@@ -38,38 +43,33 @@ class TwitterClient {
 
   async searchRecent(query) {
     const { max_id_str: sinceId = 0 } = await this.memo.getLastExecInfo()
-    this.sinceId = sinceId
     const {
       statuses,
       search_metadata: { max_id_str: maxId },
     } = await this.search({
       q: query,
       result_type: 'recent',
-      since_id: this.sinceId,
+      since_id: sinceId,
     })
     this.maxId = maxId
     return statuses
   }
 
-  async processBatch(statuses, fn) {
-    const processed = await Promise.all(statuses.map(fn))
-    this.valids = processed.filter(({ errors }) => !errors)
-    return this.valids
-  }
-
   async retweetBatch(statuses) {
-    return this.processBatch(statuses, this.retweet)
+    this.retweets = await TwitterClient.processBatch(statuses, this.retweet)
+    return this.retweets
   }
 
   async likeBatch(statuses) {
-    return this.processBatch(statuses, this.like)
+    this.likes = await TwitterClient.processBatch(statuses, this.like)
+    return this.likes
   }
 
   async updateMemo() {
     this.memo.setLastExecInfo({
       max_id_str: this.maxId,
-      retweets: this.valids.length,
-      likes: this.validLikes.length,
+      retweets: this.retweets.length,
+      likes: this.likes.length,
     })
   }
 }
