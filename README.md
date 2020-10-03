@@ -12,8 +12,7 @@
     <a href="https://www.codefactor.io/repository/github/mauriciorobayo/microvot">
       <img src="https://www.codefactor.io/repository/github/mauriciorobayo/microvot/badge" alt="CodeFactor">
     </a>
-  </P
-  <p align="center">
+      <br/>
     Spreading the word about <a href="https://twitter.com/microverseinc">@microverseinc</a>!
     <br/>
     <a href="https://twitter.com/intent/follow?screen_name=microvot">Follow</a>
