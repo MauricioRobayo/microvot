@@ -5,7 +5,14 @@
   </a>
 
   <h3 align="center"><a href="https://twitter.com/microvot">MICROVOT</a></h3>
-
+  <p align="center">
+    <a href="https://github.com/MauricioRobayo/microvot/actions?query=workflow%3Agospel">
+      <img src="https://github.com/MauricioRobayo/microvot/workflows/gospel/badge.svg" alt="Gospel">
+    </a>
+    <a href="https://www.codefactor.io/repository/github/mauriciorobayo/microvot">
+      <img src="https://www.codefactor.io/repository/github/mauriciorobayo/microvot/badge" alt="CodeFactor">
+    </a>
+  </P
   <p align="center">
     Spreading the word about <a href="https://twitter.com/microverseinc">@microverseinc</a>!
     <br/>
@@ -16,9 +23,6 @@
     <a href="https://github.com/MauricioRobayo/microvot/issues">Request Feature</a>
   </p>
 </p>
-  
-[![gospel](https://github.com/MauricioRobayo/microvot/workflows/gospel/badge.svg)](https://github.com/MauricioRobayo/microvot/actions?query=workflow%3Agospel)
-[![codebeat badge](https://codebeat.co/badges/17931215-23f0-47ac-85c9-31383657806e)](https://codebeat.co/projects/github-com-mauriciorobayo-microvot-master)
 
 ## Table of Contents
 
