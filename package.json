@@ -36,7 +36,7 @@
     "husky": "^4.3.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2",
+    "prettier": "^2.2.1",
     "run.env": "^1.1.0"
   },
   "prettier": {
