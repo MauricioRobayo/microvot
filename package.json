@@ -61,6 +61,6 @@
   },
   "dependencies": {
     "gist-client": "^1.1.1",
-    "twitterize": "^2.2.0"
+    "twitterize": "^2.2.1"
   }
 }
