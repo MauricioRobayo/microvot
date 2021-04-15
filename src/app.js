@@ -1,5 +1,5 @@
-const TwitterClient = require('./twitter_client')
-const Memo = require('./memo')
+const TwitterClient = require("./twitter_client");
+const Memo = require("./memo");
 
 const twitterClient = new TwitterClient(
   {
@@ -8,19 +8,19 @@ const twitterClient = new TwitterClient(
     access_token: process.env.TWITTER_ACCESS_TOKEN,
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
   },
-  new Memo(),
-)
+  new Memo()
+);
 
 const init = async () => {
   const [mentions, hashtags] = await Promise.all([
-    twitterClient.searchRecent('@microverseinc -filter:retweets'),
-    twitterClient.searchRecent('#microverse'),
-  ])
+    twitterClient.searchRecent("@microverseinc -filter:retweets"),
+    twitterClient.searchRecent("#microverse"),
+  ]);
   await Promise.all([
     twitterClient.retweetBatch(mentions),
     twitterClient.likeBatch(hashtags),
-  ])
-  twitterClient.updateMemo()
-}
+  ]);
+  twitterClient.updateMemo();
+};
 
-init()
+init();

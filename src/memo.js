@@ -1,17 +1,17 @@
-const GistClient = require('gist-client')
+const GistClient = require("gist-client");
 
 class Memo {
   constructor() {
-    this.gistClient = new GistClient()
-    this.gistClient.setToken(process.env.GIST_TOKEN)
-    this.gistId = '443448bbbddd72ba3bc10187edb9b9c6'
-    this.gistFile = 'microvot.json'
+    this.gistClient = new GistClient();
+    this.gistClient.setToken(process.env.GIST_TOKEN);
+    this.gistId = "443448bbbddd72ba3bc10187edb9b9c6";
+    this.gistFile = "microvot.json";
   }
 
   async getLastExecInfo() {
-    const gist = await this.gistClient.getOneById(this.gistId)
-    const file = gist.files[this.gistFile]
-    return file.size > 0 ? JSON.parse(file.content) : {}
+    const gist = await this.gistClient.getOneById(this.gistId);
+    const file = gist.files[this.gistFile];
+    return file.size > 0 ? JSON.parse(file.content) : {};
   }
 
   setLastExecInfo({ maxId, ...metadata }) {
@@ -25,8 +25,8 @@ class Memo {
           }),
         },
       },
-    })
+    });
   }
 }
 
-module.exports = Memo
+module.exports = Memo;
